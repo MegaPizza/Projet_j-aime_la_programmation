@@ -1,10 +1,9 @@
 package carte;
 import carte.Carte;
 
-public class Serviteur extends Carte implements ICapacité{
+public class Sort extends Carte implements ICapacité{
 
-	ICapacité capacité;
-	public Serviteur(String n, int c, Capacité capacité, int a, int nb){
+	public Sort(String n, int c, Capacité capacité, int a, int nb){
 		super(n,c, capacité);
 		//setter plutot
 		this.getAttaque() = a;
@@ -48,18 +47,20 @@ public class Serviteur extends Carte implements ICapacité{
 		
 	}
 	
+	
+	
 	public boolean equals(Object obj) {
 		if(obj == this) return true;
 		if(obj == null) return false;
-		if(!(obj instanceof Serviteur)) return false;
-		Serviteur s = (Serviteur) obj; 
+		if(!(obj instanceof Sort)) return false;
+		Sort s = (Sort) obj; 
 		return this.getNom().equals(s.getNom());
 	}
 	
 	public String toString() {
-		return "Serviteur[" + this.getNom() + "; cout = " + this.getCout() + "; mana =" + this.attaque + "; nombre de points de vie =" + this.nombrePointsDeVie + "]";
+		return "Sort[" + this.getNom() + "; cout = " + this.getCout() + "; mana =" + this.attaque + "; nombre de points de vie =" + this.nombrePointsDeVie + "]";
 	}
-	
+
 	@Override
 	public void executerEffetDebutTour() {
 		// TODO Auto-generated method stub
@@ -90,4 +91,5 @@ public class Serviteur extends Carte implements ICapacité{
 		return null;
 	}
 	
+
 }
