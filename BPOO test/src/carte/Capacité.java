@@ -2,12 +2,16 @@ package carte;
 
 public class Capacité implements ICapacité{
 
-	private String nom;
+	private String nomCapacité;
 	private String description;
 	
 	public Capacité(String nom, String description) {
-		this.nom = nom;
+		this.nomCapacité = nom;
 		this.description = description;
+	}
+	
+	public String toString() {
+		return "Capacité[ nom = " + this.nomCapacité + "; description = " + this.description + "]";
 	}
 	
 	@Override
@@ -46,8 +50,16 @@ public class Capacité implements ICapacité{
 	}
 
 	@Override
-	public String getNom() {
-		return this.nom;
+	public String getNomCapacité() {
+		return this.nomCapacité;
+	}
+	
+	public void setDescription(String d) {
+		this.description = d;
+	}
+	
+	public void setNomCapacité(String n) {
+		this.nomCapacité = n;
 	}
 	
 }

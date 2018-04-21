@@ -7,5 +7,5 @@ public interface ICapacité {
 	void executerEffetFinTour();
 	void executerEffetMiseEnJeu(Object cible);
 	String getDescription();
-	String getNom();
+	String getNomCapacité();
 }

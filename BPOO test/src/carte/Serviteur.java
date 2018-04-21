@@ -1,17 +1,30 @@
 package carte;
 import carte.Carte;
+import carte.Capacité;
+import carte.ICapacité;
 
-public class Serviteur extends Carte implements ICapacité{
-
-	ICapacité capacité;
-	public Serviteur(String n, int c, Capacité capacité, int a, int nb){
-		super(n,c, capacité);
-		//setter plutot
-		this.getAttaque() = a;
-		this.getNombrePointsDeVie() = nb;
-		this.getCapacité() = capacité;
-	}
+public class Serviteur extends Carte{
 	
+	private int attaque;
+	private int nombrePointsDeVie;
+	
+	public Serviteur(String n, int c, String nomCapacité, String descriptionCapacité, int a, int nb){
+		super(n,c, nomCapacité, descriptionCapacité);
+		this.attaque = a;
+		this.nombrePointsDeVie = nb;;
+	}
+	public int getAttaque() {
+		return this.attaque;
+	}
+	public int getNombrePointsDeVie() {
+		return this.nombrePointsDeVie;
+	}
+	public void setAttaque(int a) {
+		this.attaque = a;
+	}
+	public void setNombrePointsDeVie(int n) {
+		this.nombrePointsDeVie = n;
+	}
 	@Override
 	public boolean disparait() {
 		// TODO Auto-generated method stub
@@ -57,7 +70,7 @@ public class Serviteur extends Carte implements ICapacité{
 	}
 	
 	public String toString() {
-		return "Serviteur[" + this.getNom() + "; cout = " + this.getCout() + "; mana =" + this.attaque + "; nombre de points de vie =" + this.nombrePointsDeVie + "]";
+		return "Serviteur[" + super.toString() + "; attaque =" + this.getAttaque() + "; nombre de points de vie =" + this.getNombrePointsDeVie() + "]";
 	}
 	
 	@Override
@@ -83,11 +96,15 @@ public class Serviteur extends Carte implements ICapacité{
 		// TODO Auto-generated method stub
 		
 	}
+	
+	public String getDescription() {
+		return this.getDescription();
+	}
 
 	@Override
-	public String getDescription() {
-		// TODO Auto-generated method stub
-		return null;
+	public String getNomCapacité() {
+		return this.getNomCapacité();
 	}
+	
 	
 }

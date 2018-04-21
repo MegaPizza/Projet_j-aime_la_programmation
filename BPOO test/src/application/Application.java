@@ -9,8 +9,9 @@ import carte.ICapacité;
 
 public class Application {
 	public static void main(String[]arg){
-		Capacité c = new Charge();
-		Serviteur premier = new Serviteur("Charge", 2, c, 2, 1);
+		
+		Charge c = new Charge();
+		Serviteur premier = new Serviteur("Chasse-marée	murloc", 2, c.getNomCapacité(), c.getDescription(), 2, 1);
 		System.out.println(premier);
 		/*
 		Sort deuxieme = new Sort("Charge", 2, 2, 1);

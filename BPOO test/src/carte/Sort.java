@@ -1,14 +1,12 @@
 package carte;
 import carte.Carte;
+import carte.Capacité;
+import carte.ICapacité;
 
-public class Sort extends Carte implements ICapacité{
+public class Sort extends Carte{
 
-	public Sort(String n, int c, Capacité capacité, int a, int nb){
-		super(n,c, capacité);
-		//setter plutot
-		this.getAttaque() = a;
-		this.getNombrePointsDeVie() = nb;
-		this.getCapacité() = capacité;
+	public Sort(String n, int c, String nomCapacité, String descriptionCapacité){
+			super(n,c, nomCapacité, descriptionCapacité);
 	}
 	
 	@Override
@@ -47,8 +45,6 @@ public class Sort extends Carte implements ICapacité{
 		
 	}
 	
-	
-	
 	public boolean equals(Object obj) {
 		if(obj == this) return true;
 		if(obj == null) return false;
@@ -58,7 +54,7 @@ public class Sort extends Carte implements ICapacité{
 	}
 	
 	public String toString() {
-		return "Sort[" + this.getNom() + "; cout = " + this.getCout() + "; mana =" + this.attaque + "; nombre de points de vie =" + this.nombrePointsDeVie + "]";
+		return "Sort[" + super.toString() + "]";
 	}
 
 	@Override
@@ -85,10 +81,11 @@ public class Sort extends Carte implements ICapacité{
 		
 	}
 
-	@Override
 	public String getDescription() {
-		// TODO Auto-generated method stub
-		return null;
+		return this.getDescription();
+	}
+	public String getNomCapacité() {
+		return this.getNomCapacité();
 	}
 	
 

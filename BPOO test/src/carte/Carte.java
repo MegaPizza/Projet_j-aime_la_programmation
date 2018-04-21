@@ -1,16 +1,23 @@
 package carte;
+import carte.ICarte;
+import carte.Capacité;
+import carte.Charge;
+import carte.ICapacité;
+import carte.Serviteur;
+import carte.Sort;
 
-public abstract class Carte implements ICarte{
+public class Carte extends Capacité implements ICarte{
 	private String nom;
 	private int cout;
-	private int attaque;
-	private int nombrePointsDeVie;
-	private Capacité capacité;
 	
-	public Carte(String n, int c, Capacité capacité){
+	public Carte(String n, int c, String nomCapacité, String descriptionCapacité){
+		super(nomCapacité, descriptionCapacité);
 		this.nom = n;
 		this.cout = c;
-		this.capacité = capacité;
+	}
+	
+	public String toString() {
+		return "Carte = [ nom = " + this.nom + "; cout = " + this.cout + " mana " + super.toString();
 	}
 	public String getNom(){
 		return this.nom;
@@ -18,17 +25,43 @@ public abstract class Carte implements ICarte{
 	public int getCout(){
 		return this.cout;
 	}
-	public int getAttaque() {
-		return this.attaque;
-	}
-	public int getNombrePointsDeVie() {
-		return this.nombrePointsDeVie;
-	}
-	public Capacité getCapacité() {
-		return this.capacité;
-	}
-	//éventuelles exceptions
+	
 	public void setNom(String n){
 		this.nom = n;
+	}
+	
+	public void setCout(int cout){
+		this.cout = cout;
+	}
+
+	@Override
+	public boolean disparait() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+	@Override
+	public void executerAction(Object cible) {
+		// TODO Auto-generated method stub
+		
+	}
+	@Override
+	public void executerEffetDebutMiseEnJeu(Object cible) {
+		// TODO Auto-generated method stub
+		
+	}
+	@Override
+	public void executerDebutTour() {
+		// TODO Auto-generated method stub
+		
+	}
+	@Override
+	public void executerEffetDisparition() {
+		// TODO Auto-generated method stub
+		
+	}
+	@Override
+	public void executerFinTour() {
+		// TODO Auto-generated method stub
+		
 	}
 }
