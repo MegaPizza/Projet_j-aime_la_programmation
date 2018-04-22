@@ -1,12 +1,9 @@
 package carte;
 import carte.ICarte;
-import carte.Capacité;
-import carte.Charge;
-import carte.ICapacité;
-import carte.Serviteur;
-import carte.Sort;
+import carte.Capacite;
+import joueur.Heros;
 
-public class Carte extends Capacité implements ICarte{
+public class Carte extends Capacite implements ICarte{
 	private String nom;
 	private int cout;
 	
@@ -17,7 +14,7 @@ public class Carte extends Capacité implements ICarte{
 	}
 	
 	public String toString() {
-		return "Carte = [ nom = " + this.nom + "; cout = " + this.cout + " mana " + super.toString();
+		return "Carte = [ nom = " + this.nom + "; cout = " + this.cout + " mana; " + super.toString();
 	}
 	public String getNom(){
 		return this.nom;
@@ -64,4 +61,11 @@ public class Carte extends Capacité implements ICarte{
 		// TODO Auto-generated method stub
 		
 	}
+
+	@Override
+	public Heros getProprietaire() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }

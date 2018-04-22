@@ -1,6 +1,6 @@
 package carte;
 
-public interface ICapacité {
+public interface ICapacite {
 	void executerAction(Object cible);
 	void executerEffetDebutTour();
 	void executerEffetDisparition(Object cible);

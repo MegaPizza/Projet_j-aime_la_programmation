@@ -1,11 +1,11 @@
 package carte;
 
-public class Capacité implements ICapacité{
+public class Capacite implements ICapacite{
 
 	private String nomCapacité;
 	private String description;
 	
-	public Capacité(String nom, String description) {
+	public Capacite(String nom, String description) {
 		this.nomCapacité = nom;
 		this.description = description;
 	}

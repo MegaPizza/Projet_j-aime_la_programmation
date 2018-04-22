@@ -1,7 +1,5 @@
 package carte;
 import carte.Carte;
-import carte.Capacité;
-import carte.ICapacité;
 
 public class Sort extends Carte{
 
@@ -54,7 +52,7 @@ public class Sort extends Carte{
 	}
 	
 	public String toString() {
-		return "Sort[" + super.toString() + "]";
+		return "\nSort[" + super.toString() + "]";
 	}
 
 	@Override

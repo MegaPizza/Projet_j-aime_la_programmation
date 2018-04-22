@@ -1,7 +1,5 @@
 package carte;
 import carte.Carte;
-import carte.Capacité;
-import carte.ICapacité;
 
 public class Serviteur extends Carte{
 	
@@ -11,7 +9,7 @@ public class Serviteur extends Carte{
 	public Serviteur(String n, int c, String nomCapacité, String descriptionCapacité, int a, int nb){
 		super(n,c, nomCapacité, descriptionCapacité);
 		this.attaque = a;
-		this.nombrePointsDeVie = nb;;
+		this.nombrePointsDeVie = nb;
 	}
 	public int getAttaque() {
 		return this.attaque;
@@ -70,7 +68,7 @@ public class Serviteur extends Carte{
 	}
 	
 	public String toString() {
-		return "Serviteur[" + super.toString() + "; attaque =" + this.getAttaque() + "; nombre de points de vie =" + this.getNombrePointsDeVie() + "]";
+		return "\nServiteur[" + super.toString() + "; attaque =" + this.getAttaque() + "; nombre de points de vie =" + this.getNombrePointsDeVie() + "]";
 	}
 	
 	@Override

@@ -1,4 +1,5 @@
 package carte;
+import joueur.Heros;
 
 public interface ICarte {
 	boolean disparait();
@@ -9,4 +10,5 @@ public interface ICarte {
 	void executerFinTour();
 	int getCout();
 	String getNom();
+	Heros getProprietaire();
 }
