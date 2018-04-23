@@ -16,7 +16,7 @@ public interface IJoueur {
 	int	getMana();
 	String getPseudo(); 
 	int	getStockMana();
-	void jouerCarte(ICarte carte);
+	void jouerCarte(Carte carte);
 	void jouerCarte(ICarte carte, Object cible);
 	void perdreCarte(ICarte carte);
 	void piocher();

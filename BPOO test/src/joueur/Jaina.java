@@ -1,4 +1,5 @@
 package joueur;
+import java.util.ArrayList;
 import joueur.Heros;
 import carte.Sort;
 import carte.ImageMirroir;

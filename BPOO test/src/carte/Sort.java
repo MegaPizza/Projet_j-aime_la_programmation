@@ -1,5 +1,6 @@
 package carte;
 import carte.Carte;
+import joueur.Heros;
 
 public class Sort extends Carte{
 

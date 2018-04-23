@@ -1,7 +1,10 @@
 package carte;
+import java.util.ArrayList;
 import carte.ICarte;
 import carte.Capacite;
 import joueur.Heros;
+import joueur.Jaina;
+import joueur.Rexxar;
 
 public class Carte extends Capacite implements ICarte{
 	private String nom;
@@ -64,8 +67,15 @@ public class Carte extends Capacite implements ICarte{
 
 	@Override
 	public Heros getProprietaire() {
-		// TODO Auto-generated method stub
+		
+		Jaina j = new Jaina();
+		Rexxar r = new Rexxar();
+		for(Carte c : r.getMain()) {
+			if(c.getNom().equals(this.getNom()))
+				return r;
+		}
 		return null;
+		
 	}
 
 }

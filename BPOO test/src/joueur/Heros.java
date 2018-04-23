@@ -50,7 +50,8 @@ public class Heros implements IJoueur{
 		return this.deck;
 	}
 	public String toString() {
-		return "Héros [ nom = " + this.nom + "; cartes =" + this.deck + " ]";
+		//return "Héros [ nom = " + this.nom + "; cartes =" + this.deck + " ]";
+		return "Héros [ nom = " + this.nom + " ]";
 	}
 	@Override
 	public void finirTour() {
@@ -58,13 +59,19 @@ public class Heros implements IJoueur{
 		
 	}
 	@Override
-	public ICarte getCarteEnJeu(String nomCarte) {
-		// TODO Auto-generated method stub
+	public Carte getCarteEnJeu(String nomCarte) {
+		for(Carte j : jeu) {
+			if(j.getNom().equals(nomCarte))
+				return j;
+		}
 		return null;
 	}
 	@Override
-	public ICarte getCarteEnMain(String nomCarteMain) {
-		// TODO Auto-generated method stub
+	public Carte getCarteEnMain(String nomCarteMain) {
+		for(Carte m : main) {
+			if(m.getNom().equals(nomCarteMain))
+				return m;
+		}
 		return null;
 	}
 	@Override
@@ -95,8 +102,9 @@ public class Heros implements IJoueur{
 		return 0;
 	}
 	@Override
-	public void jouerCarte(ICarte carte) {
-		// TODO Auto-generated method stub
+	public void jouerCarte(Carte carte) {
+		jeu.add(carte);
+		main.remove(carte);
 		
 	}
 	@Override
