@@ -1,4 +1,6 @@
 package carte;
+import carte.ICapacite;
+import joueur.Heros;
 
 public class Capacite implements ICapacite{
 
@@ -18,7 +20,7 @@ public class Capacite implements ICapacite{
 	public void executerAction(Object cible) {
 		// TODO Auto-generated method stub
 		
-	}
+	} 
 
 	@Override
 	public void executerEffetDebutTour() {
@@ -41,7 +43,6 @@ public class Capacite implements ICapacite{
 	@Override
 	public void executerEffetMiseEnJeu(Object cible) {
 		// TODO Auto-generated method stub
-		
 	}
 
 	@Override

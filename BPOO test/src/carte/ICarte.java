@@ -1,5 +1,6 @@
 package carte;
 import joueur.Heros;
+import carte.Capacite;
 
 public interface ICarte {
 	boolean disparait();
@@ -11,4 +12,6 @@ public interface ICarte {
 	int getCout();
 	String getNom();
 	Heros getProprietaire();
+	Carte clone();
+	Capacite getCapacite();
 }

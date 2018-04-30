@@ -1,23 +1,22 @@
 package carte;
-import java.util.ArrayList;
 import carte.ICarte;
 import carte.Capacite;
 import joueur.Heros;
-import joueur.Jaina;
-import joueur.Rexxar;
 
-public class Carte extends Capacite implements ICarte{
+public class Carte implements ICarte{
 	private String nom;
 	private int cout;
+	private Heros proprietaire;
+	private Capacite capacite;
 	
-	public Carte(String n, int c, String nomCapacité, String descriptionCapacité){
-		super(nomCapacité, descriptionCapacité);
+	public Carte(String n, int c, Capacite capacite){
 		this.nom = n;
 		this.cout = c;
+		this.capacite = capacite;
 	}
 	
 	public String toString() {
-		return "Carte = [ nom = " + this.nom + "; cout = " + this.cout + " mana; " + super.toString();
+		return "\nCarte = [ nom = " + this.nom + "; cout = " + this.cout + " mana " + "; Capacité : " + this.capacite;
 	}
 	public String getNom(){
 		return this.nom;
@@ -25,13 +24,18 @@ public class Carte extends Capacite implements ICarte{
 	public int getCout(){
 		return this.cout;
 	}
-	
+	public Capacite getCapacite() {
+		return this.capacite;
+	}
 	public void setNom(String n){
 		this.nom = n;
 	}
 	
 	public void setCout(int cout){
 		this.cout = cout;
+	}
+	public void setCapacite(Capacite c) {
+		this.capacite = c;
 	}
 
 	@Override
@@ -67,15 +71,11 @@ public class Carte extends Capacite implements ICarte{
 
 	@Override
 	public Heros getProprietaire() {
-		
-		Jaina j = new Jaina();
-		Rexxar r = new Rexxar();
-		for(Carte c : r.getMain()) {
-			if(c.getNom().equals(this.getNom()))
-				return r;
-		}
-		return null;
-		
+		return this.proprietaire.getHeros();
+	}
+	
+	public Carte clone() {
+		return new Carte(nom, cout, capacite);
 	}
 
 }

@@ -8,8 +8,8 @@ public interface IJoueur {
 	public static final int MAX_MANA = 10;
 	public static final int TAILLE_DECK = 15;
 	void finirTour();
-	ICarte	getCarteEnJeu(String nomCarte);
-	ICarte getCarteEnMain(String nomCarteMain);
+	Carte	getCarteEnJeu(String nomCarte);
+	Carte getCarteEnMain(String nomCarteMain);
 	Heros getHeros();
 	ArrayList<Carte> getJeu();
 	ArrayList<Carte> getMain();

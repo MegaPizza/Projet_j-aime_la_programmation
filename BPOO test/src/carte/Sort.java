@@ -4,8 +4,8 @@ import joueur.Heros;
 
 public class Sort extends Carte{
 
-	public Sort(String n, int c, String nomCapacité, String descriptionCapacité){
-			super(n,c, nomCapacité, descriptionCapacité);
+	public Sort(String n, int c, Capacite capacite){
+			super(n,c, capacite);
 	}
 	
 	@Override
@@ -54,30 +54,6 @@ public class Sort extends Carte{
 	
 	public String toString() {
 		return "\nSort[" + super.toString() + "]";
-	}
-
-	@Override
-	public void executerEffetDebutTour() {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void executerEffetDisparition(Object cible) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void executerEffetFinTour() {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void executerEffetMiseEnJeu(Object cible) {
-		// TODO Auto-generated method stub
-		
 	}
 
 	public String getDescription() {

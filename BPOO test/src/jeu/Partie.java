@@ -15,6 +15,7 @@ public class Partie implements IPlateau{
 	}
 	@Override
 	public void ajouterJoueur(Heros joueur) {
+		joueur.setPartie(this);
 		lesjoueurs.add(joueur);
 	}
 
@@ -29,7 +30,7 @@ public class Partie implements IPlateau{
 	}
 
 	@Override
-	public void finTour(IJoueur joueur) {
+	public void finTour(Heros joueur) {
 		if(lesjoueurs.get(0).equals(joueur))
 			setJoueurCourant(lesjoueurs.get(1));
 		else
@@ -48,7 +49,7 @@ public class Partie implements IPlateau{
 	}
 
 	@Override
-	public IJoueur getAdversaire(IJoueur joueur) {
+	public Heros getAdversaire(Heros joueur) {
 		if(lesjoueurs.get(0).equals(joueur))
 			return lesjoueurs.get(1);
 		else 

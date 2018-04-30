@@ -6,9 +6,9 @@ public interface IPlateau {
 	void ajouterJoueur(Heros joueur);
 	void demarrerPartie();
 	boolean estDemarree();
-	void finTour(IJoueur joueur);
+	void finTour(Heros joueur);
 	void gagnePartie(IJoueur joueur);
-	IJoueur getAdversaire(IJoueur joueur);
+	IJoueur getAdversaire(Heros joueur);
 	IJoueur getJoueurCourant();
 	void setJoueurCourant(IJoueur joueur);
 }

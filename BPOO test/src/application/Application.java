@@ -1,13 +1,21 @@
 package application;
+import java.util.ArrayList;
 import joueur.Rexxar;
 import joueur.Jaina;
 import joueur.Heros;
-import carte.Sort;
+import carte.ImageMirroir;
 import carte.Charge;
 import jeu.Partie;
+import carte.EffetPermanent;
+import carte.AttaqueCiblee;
+import carte.AttaqueDuHeros;
+import carte.Capacite;
+import carte.Serviteur;
 
 public class Application {
 	public static void main(String[]arg){
+		/**
+		//A voir finirTour et prendreTour dans la classe Heros
 		//On démarre la partie
 		Partie partie = new Partie();
 		System.out.println("Au début, la partie est démarrée: " + partie.estDemarree());
@@ -34,8 +42,36 @@ public class Application {
 		System.out.println("Le joueur courant maintenant est : " + partie.getJoueurCourant());
 		
 		//On fait gagner un joueur
-		System.out.println("Avant : " + partie.getLesJoueurs());
-		partie.gagnePartie(jaina);
-		System.out.println("Après : " + partie.getLesJoueurs());
+		//System.out.println("Avant : " + partie.getLesJoueurs());
+		//partie.gagnePartie(jaina);
+		//System.out.println("Après : " + partie.getLesJoueurs());
+		 **/
+		
+		/** Jaina et Rexxar, utilisation de leurs pouvoirs**/
+		Jaina jaina = new Jaina();
+		Rexxar rexxar = new Rexxar();
+		//System.out.println("Le nombre de points de vie de Jaina était de " + jaina.getNombrePointsDeVie() );
+		//rexxar.getPouvoir().executerAction(jaina);
+		//System.out.println("Le nombre de points de vie de Jaina est de : " + jaina.getNombrePointsDeVie());
+		
+		/**Test avec la capacité image mirroir**/
+		Partie partie = new Partie();
+		partie.demarrerPartie();
+		partie.ajouterJoueur(jaina);
+		partie.ajouterJoueur(rexxar);
+		partie.setJoueurCourant(jaina);
+		System.out.println("Le joueur courant est : " + partie.getJoueurCourant());
+		System.out.println("L'adversaire de " + partie.getJoueurCourant() + " est " + jaina.getAdversaireHeros());
+		AttaqueCiblee ep = new AttaqueCiblee();
+		jaina.piocher();
+		jaina.jouerCarte(jaina.getMain().get(0));
+		jaina.piocher();
+		jaina.jouerCarte(jaina.getMain().get(0));
+		System.out.println("Main :" + jaina.getMain());
+		System.out.println("Jeu :" + jaina.getJeu());
+		ep.executerAction(jaina);
+		System.out.println("Jeu maintenant :" + jaina.getJeu());
+		System.out.println("Nombre de points de vie de Jaina : " + jaina.getNombrePointsDeVie());	
+
 	}
 }

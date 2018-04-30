@@ -6,8 +6,8 @@ public class Serviteur extends Carte{
 	private int attaque;
 	private int nombrePointsDeVie;
 	
-	public Serviteur(String n, int c, String nomCapacité, String descriptionCapacité, int a, int nb){
-		super(n,c, nomCapacité, descriptionCapacité);
+	public Serviteur(String n, int c, Capacite capacite, int a, int nb){
+		super(n,c, capacite);
 		this.attaque = a;
 		this.nombrePointsDeVie = nb;
 	}
@@ -71,38 +71,9 @@ public class Serviteur extends Carte{
 		return "\nServiteur[" + super.toString() + "; attaque =" + this.getAttaque() + "; nombre de points de vie =" + this.getNombrePointsDeVie() + "]";
 	}
 	
-	@Override
-	public void executerEffetDebutTour() {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void executerEffetDisparition(Object cible) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void executerEffetFinTour() {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void executerEffetMiseEnJeu(Object cible) {
-		// TODO Auto-generated method stub
-		
-	}
-	
 	public String getDescription() {
 		return this.getDescription();
 	}
 
-	@Override
-	public String getNomCapacité() {
-		return this.getNomCapacité();
-	}
-	
 	
 }

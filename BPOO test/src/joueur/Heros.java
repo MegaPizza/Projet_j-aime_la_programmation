@@ -1,36 +1,40 @@
 package joueur;
 import java.util.ArrayList;
+import jeu.Partie;
 import carte.ICarte;
 import carte.Carte;
 import carte.Serviteur;
 import carte.Sort;
 import carte.Charge;
 import carte.Provocation;
+import carte.Capacite;
 
 public class Heros implements IJoueur{
 	private String nom;
 	private int nombrePointsDeVie;
-	private String pouvoir;
 	private ArrayList<Carte> deck = new ArrayList<Carte>();
 	private ArrayList<Carte> main;
 	private ArrayList<Carte> jeu;
+	Capacite pouvoir;
+	private Partie partie;
 	
-	public Heros(String n, String p) {
+	public Heros(String n, Capacite p) {
 		this.nom = n;
-		this.nombrePointsDeVie = 15;
 		this.pouvoir = p;
+		this.nombrePointsDeVie = 15;
+		this.partie = null;
 		Charge c = new Charge();
 		Provocation prov = new Provocation();
-		deck.add(new Serviteur("Chasse-marée murloc", 2, "Cri de guerre", "Invocation d'un serviteur", 2, 1));
-		deck.add(new Sort("Charge", 1, c.getNomCapacité(), c.getDescription()));
-		deck.add(new Sort("Attaque mentale", 2, "Attaque mentale", "Inflige 5 points de dégâts au héros"));
-		deck.add(new Serviteur("Champion de Hurlevent", 7, "Bonus de Hurlevent", "Effet permanent sur les autres serviteurs alliés donnant un bonus +1/+1", 6, 6));
-		deck.add(new Serviteur("Chef de raid", 3, "Bonus du Chef de raid", "Effet permanent sur les autres serviteurs alliés de +1/0", 2, 2));
-		deck.add(new Serviteur("Garde de Baie-du-butin", 5, prov.getNomCapacité(), prov.getDescription(), 5, 4));
-		deck.add(new Serviteur("La missilière téméraire", 6, c.getNomCapacité(), c.getDescription(), 5, 2));
-		deck.add(new Serviteur("Archimage", 6, prov.getNomCapacité(), prov.getDescription(), 4, 7));
-		deck.add(new Serviteur("Gnôme lépreux", 1, "Attaque du lépreux", "Inflige deux points de dégâts au héros.", 1, 1));
-		deck.add(new Serviteur("Golem des moissons", 3, "Golémisation", "Invoque un Golem endomagé +2/+1 qui n'a aucune	capacité", 2, 3));
+		deck.add(new Serviteur("Chasse-marée murloc", 2, new Capacite("Cri de guerre", "Invocation d'un serviteur"), 2, 1).clone());
+		deck.add(new Sort("Charge", 1, c).clone());
+		deck.add(new Sort("Attaque mentale", 2, new Capacite("Attaque mentale", "Inflige 5 points de dégâts au héros")).clone());
+		deck.add(new Serviteur("Champion de Hurlevent", 7, new Capacite("Bonus de Hurlevent", "Effet permanent sur les autres serviteurs alliés donnant un bonus +1/+1"), 6, 6).clone());
+		deck.add(new Serviteur("Chef de raid", 3, new Capacite("Bonus du Chef de raid", "Effet permanent sur les autres serviteurs alliés de +1/0"), 2, 2).clone());
+		deck.add(new Serviteur("Garde de Baie-du-butin", 5, prov, 5, 4).clone());
+		deck.add(new Serviteur("La missilière téméraire", 6, c, 5, 2).clone());
+		deck.add(new Serviteur("Archimage", 6, prov, 4, 7).clone());
+		deck.add(new Serviteur("Gnôme lépreux", 1, new Capacite("Attaque du lépreux", "Inflige deux points de dégâts au héros"), 1, 1).clone());		
+		deck.add(new Serviteur("Golem des moissons", 3, new Capacite("Golémisation", "Invoque un Golem endomagé +2/+1 qui n'a aucune capacité"), 2, 3).clone());
 		main = new ArrayList<Carte>();
 		jeu = new ArrayList<Carte>();
 	}
@@ -40,9 +44,16 @@ public class Heros implements IJoueur{
 	public int getNombrePointsDeVie() {
 		return this.nombrePointsDeVie;
 	}
-	public String getPouvoir() {
+	public Partie getPartie() {
+		return this.partie;
+	}
+	public void setPartie(Partie p) {
+		this.partie = p;
+	}
+	public Capacite getPouvoir() {
 		return this.pouvoir;
 	}
+
 	public void setNombrePointsDeVie(int nb) {
 		this.nombrePointsDeVie = nb;
 	}
@@ -55,7 +66,6 @@ public class Heros implements IJoueur{
 	}
 	@Override
 	public void finirTour() {
-		// TODO Auto-generated method stub
 		
 	}
 	@Override
@@ -119,13 +129,12 @@ public class Heros implements IJoueur{
 	}
 	@Override
 	public void piocher() {
-		int aleatoire = 0 + (int)(Math.random() * ((15 - 0) + 1));
-		main.add(deck.get(aleatoire));
-		
+		int aleatoire = 0 + (int)(Math.random() * ((14 - 0) + 0));
+		main.add(deck.get(aleatoire).clone());
+		deck.remove(deck.get(aleatoire).clone());
 	}
 	@Override
 	public void prendreTour() {
-		// TODO Auto-generated method stub
 		
 	}
 	@Override
@@ -137,6 +146,10 @@ public class Heros implements IJoueur{
 	public void utiliserPouvoir(Object cible) {
 		// TODO Auto-generated method stub
 		
+	}
+	
+	public Heros getAdversaireHeros() {
+		return partie.getAdversaire(this);
 	}
 	
 }
