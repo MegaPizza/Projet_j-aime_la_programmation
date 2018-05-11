@@ -12,9 +12,9 @@ import carte.Capacite;
 public class Heros implements IJoueur{
 	private String nom;
 	private int nombrePointsDeVie;
-	private ArrayList<Carte> deck = new ArrayList<Carte>();
-	private ArrayList<Carte> main;
-	private ArrayList<Carte> jeu;
+	private ArrayList<ICarte> deck = new ArrayList<ICarte>();
+	private ArrayList<ICarte> main;
+	private ArrayList<ICarte> jeu;
 	Capacite pouvoir;
 	private Partie partie;
 	
