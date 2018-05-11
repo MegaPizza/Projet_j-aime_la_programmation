@@ -5,23 +5,36 @@ public class Serviteur extends Carte{
 	
 	private int attaque;
 	private int nombrePointsDeVie;
+	private boolean actif = false;
 	
 	public Serviteur(String n, int c, Capacite capacite, int a, int nb){
 		super(n,c, capacite);
 		this.attaque = a;
 		this.nombrePointsDeVie = nb;
 	}
+	
+	
 	public int getAttaque() {
 		return this.attaque;
 	}
 	public int getNombrePointsDeVie() {
 		return this.nombrePointsDeVie;
 	}
+	
+	public boolean getActif () {
+		return this.actif;
+	}
+	
+	
 	public void setAttaque(int a) {
 		this.attaque = a;
 	}
 	public void setNombrePointsDeVie(int n) {
 		this.nombrePointsDeVie = n;
+	}
+	
+	public void setActif(boolean a) {
+		this.actif = a;
 	}
 	@Override
 	public boolean disparait() {

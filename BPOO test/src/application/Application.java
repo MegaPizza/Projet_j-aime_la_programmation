@@ -30,6 +30,7 @@ public class Application {
 		System.out.println(partie);
 		
 		//Un joueur commence son tour
+		jaina.jeu.carte.serviteur.getActif(true); 
 		partie.setJoueurCourant(jaina);
 		System.out.println("Le joueur courant est : " + partie.getJoueurCourant());
 		
@@ -37,7 +38,7 @@ public class Application {
 		System.out.println("L'adversaire de " + partie.getJoueurCourant() + " est " + partie.getAdversaire(jaina));
 		System.out.println("L'adversaire de " + rexxar + " est " + partie.getAdversaire(rexxar));
 		
-		//On passe le tour a Rexxar
+		//On passe le tour a Rexxar 
 		partie.finTour(jaina);
 		System.out.println("Le joueur courant maintenant est : " + partie.getJoueurCourant());
 		
@@ -46,6 +47,44 @@ public class Application {
 		//partie.gagnePartie(jaina);
 		//System.out.println("Après : " + partie.getLesJoueurs());
 		 **/
+		
+		/** 
+		 // on part du principe que le joueur a choisi son héros et qu'il est dans la variable choix 1 pour jaina, 2 pour rexxar
+		  void jouerTour(int choix){
+		  
+			  if(choix==1){
+				  listeDeCarte = jaina.getJeu();
+				  if(listeDeCarte.isEmpty());
+				  else if{
+				  	for (Carte c : listeDeCarte){
+				  		if(c.getNom="Serviteur")
+				  			c.setActif(true);
+				  	}
+				  }
+			  	 System.out.println("Voici vos cartes :/n ")
+			  	 System.out.println("Main :" + jaina.getMain() +"/n");
+				 System.out.println("Jeu :" + jaina.getJeu() + "/n");
+				 System.out.println("Que voulez-vous faire ?(entrez le numeros correspondant)/n 1. Piocher /n 2.jouer une carte /n 3.attaque ciblée /n 4. attaque du Héros")
+			  	partie.finTour(jaina)
+			  }
+			  
+			 else if(choix==2){
+			 	 listeDeCarte = rexxar.getJeu();
+				  if(listeDeCarte.isEmpty();
+				  else if{
+				  	for (Carte c : listeDeCarte){
+				  		if(c.getNom="Serviteur")
+				  			c.setActif(true);
+				  	}
+				  }
+			  	//action de ce joueur 
+			  	partie.finTour(rexxar);
+			  }
+			 
+			 else 
+			 System.out.println("votre choix ne correspond pas à un héros.");
+			 //de toute façon verifiera quand le joeur entrera une donnée		  
+		 */
 		
 		/** Jaina et Rexxar, utilisation de leurs pouvoirs**/
 		Jaina jaina = new Jaina();

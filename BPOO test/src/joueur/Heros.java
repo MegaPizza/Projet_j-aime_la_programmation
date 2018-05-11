@@ -38,44 +38,43 @@ public class Heros implements IJoueur{
 		main = new ArrayList<Carte>();
 		jeu = new ArrayList<Carte>();
 	}
+	
+	/*		-------------
+	 * 		|	GETTER	|
+	 */		-------------
+	
 	public String getNom() {
 		return this.nom;
 	}
 	public int getNombrePointsDeVie() {
 		return this.nombrePointsDeVie;
+	}	
+	public ArrayList<Carte> getDeck(){
+		return this.deck;
+	}	
+	@Override
+	public ArrayList<Carte> getMain() {
+		return this.main;
 	}
-	public Partie getPartie() {
-		return this.partie;
-	}
-	public void setPartie(Partie p) {
-		this.partie = p;
+	@Override
+	public ArrayList<Carte> getJeu() {
+		return this.jeu;
 	}
 	public Capacite getPouvoir() {
 		return this.pouvoir;
 	}
-
-	public void setNombrePointsDeVie(int nb) {
-		this.nombrePointsDeVie = nb;
+	public Partie getPartie() {
+		return this.partie;
 	}
-	public ArrayList<Carte> getDeck(){
-		return this.deck;
-	}
-	public String toString() {
-		//return "Héros [ nom = " + this.nom + "; cartes =" + this.deck + " ]";
-		return "Héros [ nom = " + this.nom + " ]";
-	}
+	
 	@Override
-	public void finirTour() {
-		
+	public Heros getHeros() {
+		return this;
 	}
-	@Override
-	public Carte getCarteEnJeu(String nomCarte) {
-		for(Carte j : jeu) {
-			if(j.getNom().equals(nomCarte))
-				return j;
-		}
-		return null;
+	public Heros getAdversaireHeros() {
+		return partie.getAdversaire(this);
 	}
+	
 	@Override
 	public Carte getCarteEnMain(String nomCarteMain) {
 		for(Carte m : main) {
@@ -85,17 +84,14 @@ public class Heros implements IJoueur{
 		return null;
 	}
 	@Override
-	public Heros getHeros() {
-		return this;
+	public Carte getCarteEnJeu(String nomCarte) {
+		for(Carte j : jeu) {
+			if(j.getNom().equals(nomCarte))
+				return j;
+		}
+		return null;
 	}
-	@Override
-	public ArrayList<Carte> getJeu() {
-		return this.jeu;
-	}
-	@Override
-	public ArrayList<Carte> getMain() {
-		return this.main;
-	}
+	
 	@Override
 	public int getMana() {
 		// TODO Auto-generated method stub
@@ -111,6 +107,34 @@ public class Heros implements IJoueur{
 		// TODO Auto-generated method stub
 		return 0;
 	}
+
+	/*		-------------
+	 * 		|	SETTER	|
+	 */		-------------
+	
+	
+	public void setPartie(Partie p) {
+		this.partie = p;
+	}
+
+	public void setNombrePointsDeVie(int nb) {
+		this.nombrePointsDeVie = nb;
+	}
+	
+	/*		---------------------
+	 * 		|	AUTRE FONCTION	|
+	 */		---------------------
+	
+
+	public String toString() {
+		//return "Héros [ nom = " + this.nom + "; cartes =" + this.deck + " ]";
+		return "Héros [ nom = " + this.nom + " ]";
+	}
+	@Override
+	public void finirTour() {
+		
+	}
+	
 	@Override
 	public void jouerCarte(Carte carte) {
 		jeu.add(carte);
@@ -148,8 +172,6 @@ public class Heros implements IJoueur{
 		
 	}
 	
-	public Heros getAdversaireHeros() {
-		return partie.getAdversaire(this);
-	}
+	
 	
 }
