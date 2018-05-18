@@ -261,3 +261,8 @@ public class Application {
 		}
 	}
 }
+
+
+//________test interface graphique_____________
+
+Fenetre fen1 = new Fenetre;

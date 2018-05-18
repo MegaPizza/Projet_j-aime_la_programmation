@@ -1,19 +1,33 @@
 import javax.swing.JFrame;
+import java.awt.Color; 
+import javax.swing.JPanel;
  
-public class Test {
-  public static void main(String[] args){
 
-    JFrame fenetre = new JFrame();
-                
-    //titre pour notre fenêtre
-    fenetre.setTitle("Ma première fenêtre Java");
-    //Définit sa taille : 400 pixels de large et 400 pixels de haut
-    fenetre.setSize(400, 400);
-    //position au centre
-    fenetre.setLocationRelativeTo(null);
-    //Termine le processus lorsqu'on clique sur la croix rouge
-    fenetre.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-    //rendre visible        
-    fenetre.setVisible(true);
-  }       
+public class Fenetre extends JFrame {
+
+  public Fenetre(){
+
+    this.setTitle("Ma première fenêtre Java");
+
+    this.setSize(400, 500);//400 de largeur et 500 de longueur 
+
+    this.setLocationRelativeTo(null);//au centre 
+
+    this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); //la croix pour quitter            
+
+   
+
+    setAlwaysOnTop(boolean b):true; //au dessus des autres fenêtres
+    
+    setResizable(boolean b):true; //autorise le redimensionnement de la fenêtre
+
+    JPanel pan = new JPanel();//Instanciation d'un objet JPanel
+
+    pan.setBackground(Color.BLACK);//Définition de sa couleur de fond       
+
+    this.setContentPane(pan);//On prévient notre JFrame que notre JPanel sera son content pane (ou on mettra les composants)               
+
+    this.setVisible(true);//fenetre visible 
+  }
+
 }
