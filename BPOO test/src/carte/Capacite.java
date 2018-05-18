@@ -16,25 +16,56 @@ public class Capacite implements ICapacite{
 		this.setAttaqueServiteur(false);
 	}
 	
-	public String toString() {
-		return "Capacité[ nom = " + this.nomCapacité + "; description = " + this.description + "]";
-	}
-	
+	/*		-------------
+	 * 		|	GETTER	|
+	      	-------------     */
+	 
 	public boolean getAttaqueServiteur() {
 		return this.attaqueServiteur;
-	}
-	
-	public void setAttaqueServiteur(boolean b) {
-		this.attaqueServiteur = b;
 	}
 	
 	public boolean getPeutAttaquerHeros() {
 		return this.peutAttaquerHeros;
 	}
 	
+	@Override
+	public String getDescription() {
+		return this.description;
+	}
+
+	@Override
+	public String getNomCapacité() {
+		return this.nomCapacité;
+	
+	/*		-------------
+	 * 		|	SETTER	|
+	      	-------------     */
+		
+	public void setAttaqueServiteur(boolean b) {
+		this.attaqueServiteur = b;
+	}
+	
 	public void setPeutAttaquerHeros(boolean b) {
 		this.peutAttaquerHeros = b;
 	}
+	
+	public void setDescription(String d) {
+		this.description = d;
+	}
+	
+	public void setNomCapacité(String n) {
+		this.nomCapacité = n;
+	}
+	
+	/*		---------------------
+	 * 		|	AUTRE FONCTIONS	|
+	      	---------------------  */
+	
+	
+	public String toString() {
+		return "Capacité[ nom = " + this.nomCapacité + "; description = " + this.description + "]";
+	}
+	
 	
 	@Override
 	public void executerAction(Object cible) {
@@ -69,24 +100,6 @@ public class Capacite implements ICapacite{
 			if(((Serviteur) cible).getNombrePointsDeVie()<=0)
 				((Serviteur) cible).disparait();
 		}
-	}
-
-	@Override
-	public String getDescription() {
-		return this.description;
-	}
-
-	@Override
-	public String getNomCapacité() {
-		return this.nomCapacité;
-	}
-	
-	public void setDescription(String d) {
-		this.description = d;
-	}
-	
-	public void setNomCapacité(String n) {
-		this.nomCapacité = n;
 	}
 	
 }

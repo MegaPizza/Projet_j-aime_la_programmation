@@ -13,17 +13,38 @@ public class Serviteur extends Carte{
 		this.nombrePointsDeVie = nb;
 	}
 	
+	/*		-------------
+	 * 		|	GETTER	|
+	      	-------------     */
+	
 	public int getAttaque() {
 		return this.attaque;
 	}
 	public int getNombrePointsDeVie() {
 		return this.nombrePointsDeVie;
 	}
+	
+	public String getDescription() {
+		return this.getDescription();
+	}
+	
+	/*		-------------
+	 * 		|	SETTER	|
+	      	-------------     */
+	
 	public void setAttaque(int a) {
 		this.attaque = a;
 	}
 	public void setNombrePointsDeVie(int n) {
 		this.nombrePointsDeVie = n;
+	}
+	
+	/*		-------------------------
+	 * 		|	AUTRES FONCTIONS	|
+	      	-------------------------  */
+	
+	public String toString() {
+		return "\nServiteur[" + super.toString() + "; attaque =" + this.getAttaque() + "; nombre de points de vie =" + this.getNombrePointsDeVie() + "]";
 	}
 	
 	public boolean equals(Object obj) {
@@ -54,7 +75,6 @@ public class Serviteur extends Carte{
 			if(((Serviteur) cible).getNombrePointsDeVie()<=0)
 				((Serviteur) cible).disparait();	
 		}
-	
 	}
 	
 	public void executerEffetDebutMiseEnJeu(Object cible) {
@@ -93,14 +113,5 @@ public class Serviteur extends Carte{
 				((Serviteur) cible).disparait();	
 		}
 	}
-	
-	public String toString() {
-		return "\nServiteur[" + super.toString() + "; attaque =" + this.getAttaque() + "; nombre de points de vie =" + this.getNombrePointsDeVie() + "]";
-	}
-	
-	public String getDescription() {
-		return this.getDescription();
-	}
 
-	
 }

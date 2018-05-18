@@ -16,18 +16,32 @@ public class Carte implements ICarte{
 		this.capacite = capacite;
 	}
 	
-	public String toString() {
-		return "\nCarte = [ nom = " + this.nom + "; cout = " + this.cout + " mana " + "; " + this.capacite;
-	}
+	/*		-------------
+	 * 		|	GETTER	|
+	      	-------------     */
+	
 	public String getNom(){
 		return this.nom;
 	}
+
 	public int getCout(){
 		return this.cout;
 	}
+	
 	public Capacite getCapacite() {
 		return this.capacite;
 	}
+	
+	@Override
+	public Heros getProprietaire() {
+		return this.proprietaire.getHeros();
+	}
+	
+	
+	/*		-------------
+	 * 		|	SETTER	|
+	      	-------------     */
+	
 	public void setNom(String n){
 		this.nom = n;
 	}
@@ -37,6 +51,14 @@ public class Carte implements ICarte{
 	}
 	public void setCapacite(Capacite c) {
 		this.capacite = c;
+	}
+	
+	/*		-------------------------
+	 * 		|	AUTRE FONCTIONS 	|
+	      	-------------------------   */
+	 
+	public String toString() {
+		return "\nCarte = [ nom = " + this.nom + "; cout = " + this.cout + " mana " + "; " + this.capacite;
 	}
 
 	@Override
@@ -51,32 +73,32 @@ public class Carte implements ICarte{
 			}
 		
 	}
+	
 	@Override
 	public void executerEffetDebutMiseEnJeu(Object cible) {
 		
 	}
+	
 	@Override
 	public void executerDebutTour() {
 			
 	}
+	
 	@Override
 	public void executerEffetDisparition(Object cible) {
 		
 	}
+	
 	public void executerEffetMiseEnJeu(Object cible) {
 		if(cible instanceof Serviteur) {
 			if(((Serviteur) cible).getNombrePointsDeVie()<=0)
 				((Serviteur) cible).disparait();	
 		}
 	}
+	
 	@Override
 	public void executerFinTour() {
 		
-	}
-
-	@Override
-	public Heros getProprietaire() {
-		return this.proprietaire.getHeros();
 	}
 	
 	public Carte clone() {

@@ -13,6 +13,47 @@ public class Partie implements IPlateau{
 		lesjoueurs = new ArrayList<Heros>();
 		demarree = false;
 	}
+	
+	/*		-------------
+	 * 		|	GETTER	|
+	      	-------------     */
+	
+	@Override
+	public IJoueur getJoueurCourant() {
+		return this.joueurcourant;
+	}
+	
+	@Override
+	public Heros getAdversaire(Heros joueur) {
+		if(lesjoueurs.get(0).equals(joueur))
+			return lesjoueurs.get(1);
+		else 
+			return lesjoueurs.get(0);
+	}
+	
+
+	public ArrayList <Heros> getLesJoueurs(){
+		return this.lesjoueurs;
+	}
+
+	/*		-------------
+	 * 		|	SETTER	|
+	      	-------------     */
+	
+	@Override
+	public void setJoueurCourant(IJoueur joueur) {
+		this.joueurcourant = (Heros) joueur;
+		
+	}
+	
+	/*		-------------------------
+	 * 		|	AUTRE FONCTIONS 	|
+	      	-------------------------     */
+	
+	public String toString() {
+		return "La partie est composée des joueurs : [" + this.lesjoueurs + "]";
+	}
+	
 	@Override
 	public void ajouterJoueur(Heros joueur) {
 		joueur.setPartie(this);
@@ -46,33 +87,6 @@ public class Partie implements IPlateau{
 			lesjoueurs.remove(lesjoueurs.get(0));
 		
 		System.out.println("C'est le joueur " + joueur + " qui a gagné !");
-	}
-
-	@Override
-	public Heros getAdversaire(Heros joueur) {
-		if(lesjoueurs.get(0).equals(joueur))
-			return lesjoueurs.get(1);
-		else 
-			return lesjoueurs.get(0);
-	}
-
-	@Override
-	public IJoueur getJoueurCourant() {
-		return this.joueurcourant;
-	}
-
-	@Override
-	public void setJoueurCourant(IJoueur joueur) {
-		this.joueurcourant = (Heros) joueur;
-		
-	}
-	
-	public ArrayList <Heros> getLesJoueurs(){
-		return this.lesjoueurs;
-	}
-	
-	public String toString() {
-		return "La partie est composée des joueurs : [" + this.lesjoueurs + "]";
 	}
 
 }
