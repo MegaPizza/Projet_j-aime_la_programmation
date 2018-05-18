@@ -8,42 +8,6 @@ public class Sort extends Carte{
 			super(n,c, capacite);
 	}
 	
-	@Override
-	public boolean disparait() {
-		// TODO Auto-generated method stub
-		return false;
-	}
-
-	@Override
-	public void executerAction(Object cible) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void executerEffetDebutMiseEnJeu(Object cible) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void executerDebutTour() {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void executerEffetDisparition() {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void executerFinTour() {
-		// TODO Auto-generated method stub
-		
-	}
-	
 	public boolean equals(Object obj) {
 		if(obj == this) return true;
 		if(obj == null) return false;
@@ -62,6 +26,5 @@ public class Sort extends Carte{
 	public String getNomCapacité() {
 		return this.getNomCapacité();
 	}
-	
 
 }

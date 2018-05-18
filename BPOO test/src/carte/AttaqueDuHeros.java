@@ -8,9 +8,8 @@ public class AttaqueDuHeros extends Capacite{
 	}
 	
 	public void executerAction(Object cible) {
-		if(cible instanceof Heros)
-			((Heros) cible).setNombrePointsDeVie(((Heros) cible).getNombrePointsDeVie()-1);
-		if(cible instanceof Serviteur)
+		this.setPeutAttaquerHeros(true);
+		if(cible instanceof Carte)
 			System.out.println("Capacite n'attaque que le Héros !");
 	}
 }

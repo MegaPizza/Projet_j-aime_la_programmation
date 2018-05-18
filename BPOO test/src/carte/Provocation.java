@@ -8,7 +8,6 @@ public class Provocation extends Capacite{
 	}
 	
 	public void executerEffetMiseEnJeu(Object cible) {
-		if(cible instanceof Heros)
-			System.out.println("Carte Provocation, vous ne pouvez pas attaquer le héros");
+		System.out.println("Héros protégé par la Carte Provocation");	
 	}
 }

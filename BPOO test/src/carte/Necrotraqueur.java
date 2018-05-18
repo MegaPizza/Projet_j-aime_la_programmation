@@ -15,7 +15,8 @@ public class Necrotraqueur extends Capacite{
 	public void executerAction(Object cible) {
 		if(cible instanceof Serviteur)
 			((Serviteur) cible).setNombrePointsDeVie(((Serviteur) cible).getNombrePointsDeVie()-2);
-		if(cible instanceof Heros)
+		if(cible instanceof Heros) {
 			((Heros) cible).setNombrePointsDeVie(((Heros) cible).getNombrePointsDeVie()-2);
+		}
 	} 
 }

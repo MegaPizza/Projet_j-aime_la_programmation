@@ -7,11 +7,15 @@ public class AttaqueTotale extends Capacite{
 	public AttaqueTotale(){
 		super("Attaque totale","Cette capacité permet à la carte qui la possède d'attaquer simultanément tous les serviteurs adverses");
 	}
-	
 	public void executerEffetMiseEnJeu(Object cible) {
-		for(Carte c : ((Heros) cible).getJeu()) {
-			if (c instanceof Serviteur)
-				((Serviteur) c).setNombrePointsDeVie(((Serviteur) c).getNombrePointsDeVie()-1);
+		if(cible instanceof Heros){
+			
+			for(ICarte c : ((Heros) cible).getJeu()) {
+				if(c instanceof Serviteur) //erreur
+					this.executerEffetMiseEnJeu(c);
+			}
 		}
+		else
+			System.out.println("Mauvaise cible !");
 	}
 }

@@ -8,9 +8,10 @@ public class MarqueDuChasseur extends Capacite{
 	}
 	
 	public void executerAction(Object cible) {
-		if(cible instanceof Heros)
-			System.out.println("Marque du chasseur ne peut pas attaquer un héros");
-		if(cible instanceof Serviteur)
+		if(cible instanceof Serviteur) {
 			((Serviteur) cible).setNombrePointsDeVie(1);
+		}
+		else
+			System.out.println("Marque du chasseur n'attaque qu'un serviteur");
 	}
 }

@@ -7,14 +7,11 @@ public class ImageMirroir extends Capacite{
 		super("Image Mirroir", "c'est aussi une capacité de la famille des invocations de serviteurs. Elle est propre à Jaina. La carte possédant cette capacité invoque automatiquement, au début du tour, deux serviteurs 0/+2 avec la capacité \"Provocation\"");
 	}
 	public void executerEffetMiseEnJeu(Object cible) {
-		int compteur = 0;
-		for(ICarte c : ((Heros) cible).getAdversaireHeros().getDeck()) {
-			if(c instanceof Serviteur) {
-				if(((Serviteur) c).getAttaque()==0 && ((Serviteur) c).getNombrePointsDeVie()==2 && compteur <2) {
-					((Heros) cible).getAdversaireHeros().getJeu().add((Serviteur) c);
-					compteur = compteur + 1;
-				}
-			}
+		if(cible instanceof Heros) {
+			((Heros) cible).getAdversaireHeros().getJeu().add(new Serviteur("Carte1", 0, new Provocation(), 0, 2));
+			((Heros) cible).getAdversaireHeros().getJeu().add(new Serviteur("Carte2", 0, new Provocation(), 0, 2));
 		}
+		else
+			System.out.println("Mauvaise cible !");
 	}
 }

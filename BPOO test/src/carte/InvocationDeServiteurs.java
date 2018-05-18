@@ -9,6 +9,11 @@ public class InvocationDeServiteurs extends Capacite{
 	}
 	
 	public void executerEffetMiseEnJeu(Object cible) {
-		((Heros) cible).getAdversaireHeros().getJeu().add(new Serviteur("Garde de Baie-du-butin", 5, new Provocation(), 5, 4));
+		if(cible instanceof Heros) {
+			((Heros) cible).getAdversaireHeros().getJeu().add(new Serviteur("Garde de Baie-du-butin", 5, new Provocation(), 5, 4));
+		}
+		else {
+			System.out.println("Mauvaise cible !");
+		}
 	}
 }

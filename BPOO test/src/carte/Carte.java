@@ -1,5 +1,6 @@
 package carte;
 import carte.ICarte;
+import jeu.Partie;
 import carte.Capacite;
 import joueur.Heros;
 
@@ -16,7 +17,7 @@ public class Carte implements ICarte{
 	}
 	
 	public String toString() {
-		return "\nCarte = [ nom = " + this.nom + "; cout = " + this.cout + " mana " + "; Capacité : " + this.capacite;
+		return "\nCarte = [ nom = " + this.nom + "; cout = " + this.cout + " mana " + "; " + this.capacite;
 	}
 	public String getNom(){
 		return this.nom;
@@ -39,33 +40,37 @@ public class Carte implements ICarte{
 	}
 
 	@Override
-	public boolean disparait() {
-		// TODO Auto-generated method stub
-		return false;
+	public void disparait() {
+		this.getProprietaire().getJeu().remove(this);
 	}
 	@Override
 	public void executerAction(Object cible) {
-		// TODO Auto-generated method stub
+			if(cible instanceof Serviteur) {
+				if(((Serviteur) cible).getNombrePointsDeVie()<=0)
+					((Serviteur) cible).disparait();	
+			}
 		
 	}
 	@Override
 	public void executerEffetDebutMiseEnJeu(Object cible) {
-		// TODO Auto-generated method stub
 		
 	}
 	@Override
 	public void executerDebutTour() {
-		// TODO Auto-generated method stub
-		
+			
 	}
 	@Override
-	public void executerEffetDisparition() {
-		// TODO Auto-generated method stub
+	public void executerEffetDisparition(Object cible) {
 		
+	}
+	public void executerEffetMiseEnJeu(Object cible) {
+		if(cible instanceof Serviteur) {
+			if(((Serviteur) cible).getNombrePointsDeVie()<=0)
+				((Serviteur) cible).disparait();	
+		}
 	}
 	@Override
 	public void executerFinTour() {
-		// TODO Auto-generated method stub
 		
 	}
 

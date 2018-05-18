@@ -1,17 +1,15 @@
-package carte;
-import java.util.ArrayList;
+ppackage carte;
 import carte.Capacite;
 import joueur.Heros;
-import carte.Carte;
 
-public class EffetPermanent extends Capacite{
+public class BonusDeHurlevent extends Capacite{
 
-	public EffetPermanent() {
-		super("Effet permanent","Cette capacité permet de modifier les caractéristiques des serviteurs en jeu, en leur ajoutant des points d'attaque et/ou de vie en bonus. L'effet disparaît lorsque la carte qui possède cette capacité n'est plus en jeu");
+	public BonusDeHurlevent() {
+		super("Bonus de Hurlevent", "Effet permanent sur les autres serviteurs alliés donnant un bonus +1/+1");
 	}
-
 	public void executerEffetMiseEnJeu(Object cible) {
 		if(cible instanceof Heros){
+	
 			for(ICarte c : ((Heros) cible).getAdversaireHeros().getJeu()) {
 				if(c instanceof Serviteur) {
 					((Serviteur) c).setAttaque(((Serviteur) c).getAttaque() + 1 );
@@ -19,11 +17,9 @@ public class EffetPermanent extends Capacite{
 				}
 			}
 		}
-		else{
+		else
 			System.out.println("Mauvaise cible !");
-		}
-		
-		
+
 	}
 
 }
