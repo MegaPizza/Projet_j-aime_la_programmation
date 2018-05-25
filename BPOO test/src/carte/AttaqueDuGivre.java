@@ -2,6 +2,11 @@ package carte;
 import carte.Capacite;
 import joueur.Heros;
 
+/**
+ * Cette capacité inflige 3 points de dégâts au personnage ciblé
+ * @author mange
+ *
+ */
 public class AttaqueDuGivre extends Capacite{
 	public AttaqueDuGivre() {
 		super("Attaque du givre","Inflige 3 points de dégâts au personnage ciblé");

@@ -1,11 +1,17 @@
 package carte;
 import carte.Capacite;
+
+/**
+ * Cette capacité Cette capacité permet à la carte qui la possède, d'attaquer le héros adverse,
+ * en toute circonstance,y compris lorsque le héros est protégé par la provocation
+ */
+
 import joueur.Heros;
 
 public class AttaqueDuLepreux extends Capacite{
 	
 	public AttaqueDuLepreux() {
-		super("Attaque du lépreux","Inflige deux points de dégâts au héros");
+		super("Attaque du lépreux","C");
 	}
 	
 	public void executerEffetMiseEnJeu(Object cible) {

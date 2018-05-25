@@ -1,5 +1,9 @@
 package carte;
 import carte.Capacite;
+
+/**
+ * Cette capacité inflige 5 points de dégâts au héros
+ */
 import joueur.Heros;
 
 public class AttaqueMentale extends Capacite{

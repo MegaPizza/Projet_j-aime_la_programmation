@@ -1,5 +1,9 @@
 package carte;
 import carte.Capacite;
+
+/**
+ * Cette capacité inflige 4 points de dégâts à tous les serviteurs adverses
+ */
 import joueur.Heros;
 
 public class AttaqueMassive extends Capacite{
