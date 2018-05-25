@@ -4,18 +4,21 @@ import javax.swing.JPanel;
  
 
 public class Fenetre extends JFrame {
+	
+	  private JButton boutonJ = new JButton("Jaina");
+	  private JButton boutonR = new JButton("Rexxar");
 
   public Fenetre(){
 
-    this.setTitle("Ma première fenêtre Java");
+    this.setTitle("Heartstone");
 
     this.setSize(400, 500);//400 de largeur et 500 de longueur 
 
     this.setLocationRelativeTo(null);//au centre 
+    
+    this.getContentPane().add(bouton);
 
     this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); //la croix pour quitter            
-
-   
 
     setAlwaysOnTop(boolean b):true; //au dessus des autres fenêtres
     
